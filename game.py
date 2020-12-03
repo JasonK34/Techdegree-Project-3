@@ -15,7 +15,7 @@ class Game:
         return random.choice(self.phrases)
 
     def welcome(self):
-        print("\n>>>>> Welcome to the Memory Game! <<<<<\n")
+        print("\n>>>>> Welcome to Phrase Hunter! <<<<<\n")
 
     def start(self):
         self.welcome()
@@ -23,8 +23,12 @@ class Game:
         self.active_phrase.display(self.guesses)
         self.user_guess = self.get_guess()
         self.guesses.append(self.user_guess)
-        print(self.user_guess)
-        self.active_phrase.display(self.guesses)
+        if self.active_phrase.check_guess(self.user_guess):
+            print("YAY")
+        else:
+            print("Bummer!")
+
+
 
     def get_guess(self):
         self.letter = input("\n\nPlease enter a letter: ")

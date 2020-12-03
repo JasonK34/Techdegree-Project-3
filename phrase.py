@@ -11,3 +11,9 @@ class Phrase:
                 print(f"{letter}", end=" ")
             else:
                 print("_ ", end=" ")
+
+    def check_guess(self, user_guess):
+        if self.user_guess in self.phrase:
+            return True
+        else:
+            return False
