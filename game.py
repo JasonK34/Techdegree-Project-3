@@ -23,7 +23,7 @@ class Game:
         self.active_phrase.display(self.guesses)
         self.user_guess = self.get_guess()
         self.guesses.append(self.user_guess)
-        if self.active_phrase.check_guess(self.user_guess):
+        if self.active_phrase.check_guess(user_guess):
             print("YAY")
         else:
             print("Bummer!")
@@ -31,5 +31,5 @@ class Game:
 
 
     def get_guess(self):
-        self.letter = input("\n\nPlease enter a letter: ")
-        return self.letter
+        letter = input("\n\nPlease enter a letter: ")
+        return letter

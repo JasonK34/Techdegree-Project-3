@@ -12,8 +12,8 @@ class Phrase:
             else:
                 print("_ ", end=" ")
 
-    def check_guess(self, user_guess):
-        if self.user_guess in self.phrase:
+    def check_guess(self, guess):
+        if user_guess in self.phrase:
             return True
         else:
             return False
