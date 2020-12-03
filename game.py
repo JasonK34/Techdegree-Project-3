@@ -5,7 +5,8 @@ class Game:
     
     def __init__(self):
         self.missed = 0
-        self.phrases = [Phrase("Go Ahead Make My Day"), Phrase("Say Hello To My Little Friend"), Phrase("May the Force be with you"), Phrase("Hasta la vista baby"), Phrase("Yo Adrien")]
+        self.phrases = [Phrase("Go Ahead Make My Day"), Phrase("Say Hello To My Little Friend"), 
+            Phrase("May the Force be with you"), Phrase("Hasta la vista baby"), Phrase("Yo Adrien")]
         self.active_phrase = self.get_random_phrase()
         self.guesses = [" "]
 
@@ -13,3 +14,18 @@ class Game:
     def get_random_phrase(self):
         return random.choice(self.phrases)
 
+    def welcome(self):
+        print("\n~~~~~~~~~~~~<><><>~~~~~~~~~~\n C'mooooonn dooowwwwwwn!!!\n~~~~~~~~~~~~<><><>~~~~~~~~~~\n")
+
+    def start(self):
+        self.welcome()
+        print(f"Number Missed: {self.missed}")
+        self.active_phrase.display(self.guesses)
+        self.user_guess = self.get_guess()
+        print(self.user_guess)
+        self.active_phrase.display(self.guesses)
+        self.guesses.append(self.user_guess)
+
+    def get_guess(self):
+        self.letter = input("\n\nPlease enter a letter: ")
+        return self.letter
