@@ -15,16 +15,16 @@ class Game:
         return random.choice(self.phrases)
 
     def welcome(self):
-        print("\n~~~~~~~~~~~~<><><>~~~~~~~~~~\n C'mooooonn dooowwwwwwn!!!\n~~~~~~~~~~~~<><><>~~~~~~~~~~\n")
+        print("\n>>>>> Welcome to the Memory Game! <<<<<\n")
 
     def start(self):
         self.welcome()
         print(f"Number Missed: {self.missed}")
         self.active_phrase.display(self.guesses)
         self.user_guess = self.get_guess()
+        self.guesses.append(self.user_guess)
         print(self.user_guess)
         self.active_phrase.display(self.guesses)
-        self.guesses.append(self.user_guess)
 
     def get_guess(self):
         self.letter = input("\n\nPlease enter a letter: ")
