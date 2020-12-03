@@ -22,7 +22,7 @@ class Game:
         print(f"Number Missed: {self.missed}")
         self.active_phrase.display(self.guesses)
         user_guess = self.get_guess()
-        self.guesses.append(self.user_guess)
+        self.guesses.append(user_guess)
         if self.active_phrase.check_guess(user_guess):
             print("YAY")
         else:
