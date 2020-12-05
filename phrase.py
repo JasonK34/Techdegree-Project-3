@@ -23,3 +23,4 @@ class Phrase:
             if letter not in guesses:
                 return False
         return True
+        

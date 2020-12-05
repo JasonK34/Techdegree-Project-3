@@ -10,7 +10,6 @@ class Game:
         self.active_phrase = self.get_random_phrase()
         self.guesses = [" "]
 
-
     def get_random_phrase(self):
         return random.choice(self.phrases)
 
@@ -37,5 +36,6 @@ class Game:
             print("Sorry, you lose. GAME OVER")
         else:
             print("Great job, YOU WIN!!")
+            
 
 
